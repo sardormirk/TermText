@@ -1,0 +1,22 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/voidblob/Desktop/TermText/TermText'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _abAppend, symObjAddr: 0x0, symBinAddr: 0x10000320C, symSize: 0xA8 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _test, symObjAddr: 0x24D5, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x75, offset: 0x75, size: 0x8, addend: 0x0, symName: _edt, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x174, offset: 0x174, size: 0x8, addend: 0x0, symName: _abAppend, symObjAddr: 0x0, symBinAddr: 0x10000320C, symSize: 0xA8 }
+  - { offsetInCU: 0x1C2, offset: 0x1C2, size: 0x8, addend: 0x0, symName: _abFree, symObjAddr: 0xA8, symBinAddr: 0x1000032B4, symSize: 0x28 }
+  - { offsetInCU: 0x1E6, offset: 0x1E6, size: 0x8, addend: 0x0, symName: _terminate, symObjAddr: 0xD0, symBinAddr: 0x1000032DC, symSize: 0x4C }
+  - { offsetInCU: 0x20A, offset: 0x20A, size: 0x8, addend: 0x0, symName: _disableRawMode, symObjAddr: 0x11C, symBinAddr: 0x100003328, symSize: 0x48 }
+  - { offsetInCU: 0x21F, offset: 0x21F, size: 0x8, addend: 0x0, symName: _enableRawMode, symObjAddr: 0x164, symBinAddr: 0x100003370, symSize: 0x118 }
+  - { offsetInCU: 0x243, offset: 0x243, size: 0x8, addend: 0x0, symName: _editorReadKey, symObjAddr: 0x27C, symBinAddr: 0x100003488, symSize: 0x1B4 }
+  - { offsetInCU: 0x295, offset: 0x295, size: 0x8, addend: 0x0, symName: _getCursorPosition, symObjAddr: 0x440, symBinAddr: 0x10000364C, symSize: 0x1A4 }
+  - { offsetInCU: 0x2E7, offset: 0x2E7, size: 0x8, addend: 0x0, symName: _getWindowSize, symObjAddr: 0x5E4, symBinAddr: 0x1000037F0, symSize: 0xCC }
+  - { offsetInCU: 0x32B, offset: 0x32B, size: 0x8, addend: 0x0, symName: _editorMoveCursor, symObjAddr: 0x6B0, symBinAddr: 0x1000038BC, symSize: 0x120 }
+  - { offsetInCU: 0x34F, offset: 0x34F, size: 0x8, addend: 0x0, symName: _editorProcessKeypress, symObjAddr: 0x7E0, symBinAddr: 0x1000039EC, symSize: 0x90 }
+  - { offsetInCU: 0x373, offset: 0x373, size: 0x8, addend: 0x0, symName: _editorDrawRows, symObjAddr: 0x870, symBinAddr: 0x100003A7C, symSize: 0x218 }
+  - { offsetInCU: 0x3DE, offset: 0x3DE, size: 0x8, addend: 0x0, symName: _editorRefreshScreen, symObjAddr: 0xA88, symBinAddr: 0x100003C94, symSize: 0x130 }
+  - { offsetInCU: 0x413, offset: 0x413, size: 0x8, addend: 0x0, symName: _initEditor, symObjAddr: 0xBB8, symBinAddr: 0x100003DC4, symSize: 0x4C }
+  - { offsetInCU: 0x429, offset: 0x429, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xC04, symBinAddr: 0x100003E10, symSize: 0x24 }
+...

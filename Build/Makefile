@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TermPad
+# Target rules for targets named TermText
 
 # Build rule for target.
-TermPad: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TermPad
-.PHONY : TermPad
+TermText: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TermText
+.PHONY : TermText
 
 # fast build rule for target.
-TermPad/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermPad.dir/build.make CMakeFiles/TermPad.dir/build
-.PHONY : TermPad/fast
+TermText/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermText.dir/build.make CMakeFiles/TermText.dir/build
+.PHONY : TermText/fast
 
 TermText.o: TermText.c.o
 .PHONY : TermText.o
 
 # target to build an object file
 TermText.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermPad.dir/build.make CMakeFiles/TermPad.dir/TermText.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermText.dir/build.make CMakeFiles/TermText.dir/TermText.c.o
 .PHONY : TermText.c.o
 
 TermText.i: TermText.c.i
@@ -142,7 +142,7 @@ TermText.i: TermText.c.i
 
 # target to preprocess a source file
 TermText.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermPad.dir/build.make CMakeFiles/TermPad.dir/TermText.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermText.dir/build.make CMakeFiles/TermText.dir/TermText.c.i
 .PHONY : TermText.c.i
 
 TermText.s: TermText.c.s
@@ -150,7 +150,7 @@ TermText.s: TermText.c.s
 
 # target to generate assembly for a file
 TermText.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermPad.dir/build.make CMakeFiles/TermPad.dir/TermText.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TermText.dir/build.make CMakeFiles/TermText.dir/TermText.c.s
 .PHONY : TermText.c.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TermPad"
+	@echo "... TermText"
 	@echo "... TermText.o"
 	@echo "... TermText.i"
 	@echo "... TermText.s"
