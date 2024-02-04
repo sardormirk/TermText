@@ -74,15 +74,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Showcase](https://raw.githubusercontent.com/voidblob/TermText/master/demo.png)
+![Showcase](https://raw.githubusercontent.com/voidblob/TermText/master/showcase.png)
 
 <h5>Key Features</h5>
 <ol>
-  <li>Real-Time Scene Editing: Dynamic modification of scenes for efficient development.</li>
-  <li>Face Culling: Improved rendering performance by skipping non-visible faces.</li>
-  <li>Deferred Shading: Enhanced rendering efficiency with realistic lighting effects.</li>
+  <li>Vim-like Features: Efficient keyboard movements and commands for streamlined editing.</li>
+  <li>Enhance code readability with syntax highlighting.</li>
+  <li>Text Editing: Core functionality for manipulating and modifying text.</li>
   <li>
-Model Loading/Editing: Seamless 3D model integration and in-app editing with Assimp.</li>
+WIP Config System: Work-in-progress configuration system for customization.</li>
 </ol>
 
 
@@ -96,7 +96,7 @@ Model Loading/Editing: Seamless 3D model integration and in-app editing with Ass
 
 * [![C++][C++]][C++-url]
 * [![Make][Cmake]][Cmake-url]
-* [![OpenGL][OpenGL]][OpenGL-url]
+
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,10 +116,6 @@ The following instructions are a general installation guide for MacOS/Linux. To 
   brew install cmake
   sudo apt-get install cmake
   ```
-* Visual Studio (latest version) - Windows
-* <a href="https://visualstudio.microsoft.com/free-developer-offers/
-">Community Version Download</a>
-  
 
 ### Installation
 
@@ -132,12 +128,12 @@ The following instructions are a general installation guide for MacOS/Linux. To 
    ```sh
    cmake ..
    make
-   ./main
+   ./TermText #no file name creates a new file
+   ./TermText #file_name - opens existing file
    ```
 <h5>On Windows</h5>
 
-1. Create a new project with existing files (selecting the root folder of this repo)
-2. In solution settings, add all include directories, library directories, and source directories to the file path
+1. Download a linux distribution using WSL
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,49 +142,41 @@ The following instructions are a general installation guide for MacOS/Linux. To 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To use the engine, load in your own models by putting them in /resources/model_folder_name/.
+To use the text editor, simply call ./TermText from the build directory along with a file name or leave it blank to create a new file
 
-1. Edit the model file path in Source.cpp
+1. Adding syntax highlighting for other languages:
 ```cpp
-const string modelPath = "TermText/resources/model_folder_name/model_name.obj";
+char *C_HL_extensions[] = {".c", ".h", ".cpp", NULL}; //Add file extensions (.js for javascript, etc)
+
+char *C_HL_keywords[] = { //Add keywords for the language you want to highlight, adding a | makes it a secondary keyword (different colour)
+    "#include",
+    "switch",
+    "if", "while", "for", "break", "continue", "return", "else",
+    "struct", "union", "typedef", "static", "enum", "class", "case",
+    "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
+    "void|", NULL};
+
+struct editorSyntax HLDB[] = {
+    {"c", C_HL_extensions, C_HL_keywords, "//", "/*", "*/", HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS},
+}; //Create a editorSyntax struct, passing in the filetype, extensions array, keywords array, comment structure (C usings // and /* for comments), and highlight flags
 ```
 
-To change the skybox, load your cubemap texture by putting each face in resources/skybox/
+2. Commands:
 
-1. Edit the cubemap file path vector in Source.cpp
-```cpp
- vector<std::string> faces
-    {
-        "TermText/resources/skybox/your_skybox/right.jpg",
-        "TermText/resources/skybox/your_skybox/left.jpg",
-        "TermText/resources/skybox/your_skybox/top.jpg",
-        "TermText/resources/skybox/your_skybox/bottom.jpg",
-        "TermText/resources/skybox/your_skybox/front.jpg",
-        "TermText/resources/skybox/your_skybox/back.jpg"
+* END: goes to end of line
+* HOME: goes to beginning of line
+* PG_DOWN: goes to end of file
+* PG_UP: goes to beginning of file
+* Arrow keys: movement
+* HJKL: movement
+* DD: deletes a line
+* CTRL_S: saves file
+* CTRL_Q: quits file
+* ESC: enters normal mode
+* i: enters insert mode
 
-    };
-```
 
-If you want to change the code yourself (add more objects/create your own scene), 
-1. You can create and load your own shaders using the Shader class:
-```cpp
- Shader MyShader(MyShaderPath);
-//Set uniforms
- MyShader.SetVec3(some uniform);
- MyShader.setMat4(some uniform);
-//Etc
-```
-2. You can create your own model and load it using the Model class:
-```cpp
- Model MyModel(MyModelPath);
-//Draw model using built-in model shader or your own
- while(!window.shouldClose()){
- ...
- MyModel.draw(MyShader);
- ...
 
- }
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -197,9 +185,9 @@ If you want to change the code yourself (add more objects/create your own scene)
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Better portability/build system
-- [ ] More customizability by adding more configurable options in the ImGUI menu
-- [ ] Level-generation
+- [ ] Finish config system
+- [ ] Add more colour options for different keywords
+- [ ] Add a file loading system for the file extension arrays and keyword database
 
 
 See the [open issues](https://github.com/voidblob/TermText/issues) for a full list of proposed features (and known issues).
@@ -231,20 +219,6 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* [OpenGL]()
-* [Assimp]()
-* [ImGUI]()
-* [GLFW]()
-* [GLAD]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/voidblob/TermText.svg?style=for-the-badge
@@ -260,7 +234,7 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: https://github.com/voidblob/TermText/blob/master/demo.png
-[C++]: https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white
+[C++]: https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white
 [C++-url]: https://cplusplus.com/
 [OpenGL]: https://img.shields.io/badge/OpenGL-%23FFFFFF.svg?style=for-the-badge&logo=opengl
 [OpenGL-url]: https://www.opengl.org/
