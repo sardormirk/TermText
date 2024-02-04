@@ -126,7 +126,9 @@ time_t time_last = 0;
 char *C_HL_extensions[] = {".c", ".h", ".cpp", NULL};
 
 char *C_HL_keywords[] = {
-    "switch", "if", "while", "for", "break", "continue", "return", "else",
+    "#include",
+    "switch",
+    "if", "while", "for", "break", "continue", "return", "else",
     "struct", "union", "typedef", "static", "enum", "class", "case",
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
     "void|", NULL};
@@ -1029,14 +1031,6 @@ void editorProcessKeypress()
     exit(0);
     break;
 
-  case 'i':
-    if (NORMAL_MODE)
-    {
-      NORMAL_MODE = false;
-      INSERT_MODE = true;
-    }
-    break;
-
   case '\x1b':
     if (INSERT_MODE)
     {
@@ -1103,10 +1097,14 @@ void editorProcessKeypress()
       editorInsertChar(c);
     if (NORMAL_MODE)
     {
-      if (c != 'h' || c != 'j' || c != 'k' || c != 'l')
+      if (c == 'i')
+      {
+        NORMAL_MODE = false;
+        INSERT_MODE = true;
+      }
+      else if (c != 'h' && c != 'j' && c != 'k' && c != 'l')
       {
         command_count = 1;
-
         if (command_count)
         {
           editorSetStatusMessage("Command: %c", c);
@@ -1128,6 +1126,7 @@ void editorProcessKeypress()
 
           default:
             prev = c;
+            break;
           }
         }
       }
