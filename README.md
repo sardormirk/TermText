@@ -28,19 +28,19 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">TermText- A minimalistic Terminal text-editor with ~1.2 LOC </h3>
+<h3 align="center">TermText - A pure C minimalistic Terminal text-editor with ~1.2 LOC </h3>
 
   <p align="center">
-    A C++ 3D graphics engine using OpenGL, GLFW, ImGUI, and Assimp. Features real-time scene editing, face culling for performance, deferred shading, and model loading/editing.
+   A barebones C terminal text editor with almost 1200 lines of code. Written in pure C with no external libraries, it features a Vim-like feature set of keyboard movements and commands, syntax highlighting, file creation/loading, text editing, modal editing (normal mode, insert mode), and a work-in-progress config system.
     <br />
-    <a href="https://github.com/voidblob/RNDEngine"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/voidblob/TermText"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/voidblob/RNDEngine">View Demo</a>
+    <a href="https://github.com/voidblob/TermText">View Demo</a>
     ·
-    <a href="https://github.com/voidblob/RNDEngine/issues">Report Bug</a>
+    <a href="https://github.com/voidblob/TermText/issues">Report Bug</a>
     ·
-    <a href="https://github.com/voidblob/RNDEngine/issues">Request Feature</a>
+    <a href="https://github.com/voidblob/TermText/issues">Request Feature</a>
   </p>
 </div>
 
@@ -74,7 +74,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Showcase](https://raw.githubusercontent.com/voidblob/RNDEngine/master/demo.png)
+![Showcase](https://raw.githubusercontent.com/voidblob/TermText/master/demo.png)
 
 <h5>Key Features</h5>
 <ol>
@@ -126,7 +126,7 @@ The following instructions are a general installation guide for MacOS/Linux. To 
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/voidblob/RNDEngine.git
+   git clone https://github.com/voidblob/TermText.git
    ```
 2. Go into the Build directory and run the following commands
    ```sh
@@ -150,7 +150,7 @@ To use the engine, load in your own models by putting them in /resources/model_f
 
 1. Edit the model file path in Source.cpp
 ```cpp
-const string modelPath = "RNDEngine/resources/model_folder_name/model_name.obj";
+const string modelPath = "TermText/resources/model_folder_name/model_name.obj";
 ```
 
 To change the skybox, load your cubemap texture by putting each face in resources/skybox/
@@ -159,12 +159,12 @@ To change the skybox, load your cubemap texture by putting each face in resource
 ```cpp
  vector<std::string> faces
     {
-        "RNDEngine/resources/skybox/your_skybox/right.jpg",
-        "RNDEngine/resources/skybox/your_skybox/left.jpg",
-        "RNDEngine/resources/skybox/your_skybox/top.jpg",
-        "RNDEngine/resources/skybox/your_skybox/bottom.jpg",
-        "RNDEngine/resources/skybox/your_skybox/front.jpg",
-        "RNDEngine/resources/skybox/your_skybox/back.jpg"
+        "TermText/resources/skybox/your_skybox/right.jpg",
+        "TermText/resources/skybox/your_skybox/left.jpg",
+        "TermText/resources/skybox/your_skybox/top.jpg",
+        "TermText/resources/skybox/your_skybox/bottom.jpg",
+        "TermText/resources/skybox/your_skybox/front.jpg",
+        "TermText/resources/skybox/your_skybox/back.jpg"
 
     };
 ```
@@ -202,7 +202,7 @@ If you want to change the code yourself (add more objects/create your own scene)
 - [ ] Level-generation
 
 
-See the [open issues](https://github.com/voidblob/RNDEngine/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/voidblob/TermText/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -247,19 +247,19 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/voidblob/RNDEngine.svg?style=for-the-badge
-[contributors-url]: https://github.com/voidblob/RNDEngine/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/voidblob/RNDEngine.svg?style=for-the-badge
-[forks-url]: https://github.com/voidblob/RNDEngine/network/members
-[stars-shield]: https://img.shields.io/github/stars/voidblob/RNDEngine.svg?style=for-the-badge
-[stars-url]: https://github.com/voidblob/RNDEngine/stargazers
-[issues-shield]: https://img.shields.io/github/issues/voidblob/RNDEngine.svg?style=for-the-badge
-[issues-url]: https://github.com/voidblob/RNDEngine/issues
-[license-shield]: https://img.shields.io/github/license/voidblob/RNDEngine.svg?style=for-the-badge
-[license-url]: https://github.com/voidblob/RNDEngine/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/voidblob/TermText.svg?style=for-the-badge
+[contributors-url]: https://github.com/voidblob/TermText/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/voidblob/TermText.svg?style=for-the-badge
+[forks-url]: https://github.com/voidblob/TermText/network/members
+[stars-shield]: https://img.shields.io/github/stars/voidblob/TermText.svg?style=for-the-badge
+[stars-url]: https://github.com/voidblob/TermText/stargazers
+[issues-shield]: https://img.shields.io/github/issues/voidblob/TermText.svg?style=for-the-badge
+[issues-url]: https://github.com/voidblob/TermText/issues
+[license-shield]: https://img.shields.io/github/license/voidblob/TermText.svg?style=for-the-badge
+[license-url]: https://github.com/voidblob/TermText/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: https://github.com/voidblob/RNDEngine/blob/master/demo.png
+[product-screenshot]: https://github.com/voidblob/TermText/blob/master/demo.png
 [C++]: https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white
 [C++-url]: https://cplusplus.com/
 [OpenGL]: https://img.shields.io/badge/OpenGL-%23FFFFFF.svg?style=for-the-badge&logo=opengl
