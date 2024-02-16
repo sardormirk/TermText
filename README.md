@@ -28,7 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">TermText - A pure C minimalistic Terminal text-editor with ~1.2 LOC </h3>
+<h3 align="center">TermText - A pure C minimalistic Terminal text-editor with ~1.2K LOC </h3>
 
   <p align="center">
    A barebones C terminal text editor with almost 1200 lines of code. Written in pure C with no external libraries, it features a Vim-like feature set of keyboard movements and commands, syntax highlighting, file creation/loading, text editing, modal editing (normal mode, insert mode), and a work-in-progress config system.
